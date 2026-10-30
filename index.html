@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zombie Defense Agency</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #g { width: 100%; height: 100%; }
+</style>
+<script>
+  window.RufflePlayer = {
+    config: {
+      splashScreen: false,
+      contextMenu: "off",
+      letterbox: "on",
+      backgroundColor: "#000000",
+      unmuteOverlay: "visible"
+    }
+  };
+</script>
+<script src="https://unpkg.com/@ruffle-rs/ruffle@0.7.1/ruffle.js"></script>
+</head>
+<body>
+<div id="g"></div>
+<script>
+  addEventListener("load", function () {
+    var p = window.RufflePlayer.newest().createPlayer();
+    p.style.width = "100%";
+    p.style.height = "100%";
+    document.getElementById("g").appendChild(p);
+    p.load("https://bubblebox.com/gamedata/bubblebox/swf6/20130379/zombie_defense_agency.swf?gameVersion=13");
+  });
+</script>
+</body>
+</html>
